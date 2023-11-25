@@ -64,15 +64,13 @@ p {
   letter-spacing: 0.02em;
   color: #434455;
 }
-.top-sect,
-.bottom-section {
-  background-color: #2e2f42;
-}
+
 a:active {
   color: #4d5ae5;
   text-decoration: underline;
 }
-.link,
+.menu .link,
+.contact-list,
 .logo {
   text-decoration: none;
 }
@@ -83,7 +81,6 @@ a:active {
   line-height: 1.17; /* 116.667% */
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
   color: #4d5ae5;
 }
 .logo-top {
@@ -109,6 +106,19 @@ a:active {
 .page-navigation {
   display: flex;
   align-items: center;
+}
+.studio-link {
+  position: relative;
+}
+.studio-link::after {
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: #404bbf;
+  position: absolute;
+  content: "";
 }
 .menu {
   display: flex;
@@ -155,6 +165,16 @@ a:active {
 }
 .top-sect {
   padding: 188px 0;
+  background-color: rgba(46, 47, 66, 0.7);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/top-sect-background/people-office.jpg);
+  max-width: 1440px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .center-title {
   max-width: 496px;
@@ -207,6 +227,24 @@ a:active {
 .benef-item {
   width: calc((100% - 24px * 3) / 4);
 }
+.svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background-color: #f4f4fd;
+  fill: #2e2f42;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+}
+.antenna,
+.clock,
+.diagram {
+  fill: "#2e2f42";
+}
 .benefits-name {
   margin-bottom: 8px;
 }
@@ -214,6 +252,7 @@ a:active {
 .menu-item {
   /* Body Medium */
   display: block;
+  position: relative;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5; /* 150% */
@@ -255,6 +294,9 @@ a:active {
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
+.team-list:hover .team-card {
+  background: #fff;
+}
 .team-name {
   color: #2e2f42;
   font-size: 20px;
@@ -270,13 +312,37 @@ a:active {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
 }
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.social-list-item:hover .social-list-link,
+.social-list-item:focus .social-list-link {
+  background-color: #31d0aa;
+}
+.social-list-icon {
+  fill: #f4f4fd;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  width: 40px;
+  height: 40px;
+}
+
 .person-style-thumb {
   padding: 32px 0;
 }
-.team-card:hover {
-  background: #fff;
-}
+
 .portf-list {
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +354,42 @@ a:active {
   align-self: stretch;
 }
 .portfolio-card {
+  overflow: hidden;
+  cursor: pointer;
   width: calc((100% - 48px) / 3);
+}
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card:hover .overlay {
+  transform: translateY(0%);
+}
+
+.overlay {
+  position: absolute;
+  overflow: auto;
+  transition: transform 250ms linear;
+  transform: translateY(100%);
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 300px;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+  background-color: #4d5ae5;
+}
+.text-overlay {
+  /* Body */
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.02em;
+  width: 296px;
+  color: #f4f4fd;
 }
 .app-style-thumb {
   padding: 32px 16px;
@@ -300,6 +401,10 @@ a:active {
 }
 .bottom-section {
   padding: 100px 0;
+  background-color: #2e2f42;
+}
+.logo-text-container {
+  margin-right: 120px;
 }
 .footer-logo {
   font-family: Raleway, sans-serif;
@@ -319,6 +424,9 @@ a:active {
   letter-spacing: 0.02em;
   color: #f4f4fd;
 }
+.bottom-thumb {
+  display: flex;
+}
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -331,4 +439,24 @@ a:active {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #f4f4fd;
+}
+
+.social-media-title {
+  /* Body Medium */
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.social-media-list {
+  display: flex;
+  gap: 16px;
+}
+.social-media-item:hover .social-list-link,
+.social-media-item:focus .social-list-link {
+  background-color: #31d0aa;
 }
