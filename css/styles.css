@@ -436,6 +436,7 @@ a:active {
 }
 .bottom-thumb {
   display: flex;
+  align-items: baseline;
 }
 .footer-logo {
   display: inline-block;
