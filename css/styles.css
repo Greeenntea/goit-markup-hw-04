@@ -331,7 +331,7 @@ a:active {
 }
 .social-list-item:hover .social-list-link,
 .social-list-link:focus {
-  background-color: #31d0aa;
+  background-color: #404bbf;
 }
 .social-list-icon {
   fill: #f4f4fd;
@@ -467,6 +467,6 @@ a:active {
   gap: 16px;
 }
 .social-media-item:hover .social-list-link,
-.social-list-link:focus {
+.media-link:focus {
   background-color: #31d0aa;
 }
